@@ -1,2 +1,2 @@
-?php 
-echo "WHAT THE HELL ITS MEE" ?
+<?php 
+echo "WHAT THE HELL ITS MEE" ;
