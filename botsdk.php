@@ -11,12 +11,18 @@ if (!is_null($events['events'])) {
 			    $replyToken=$event['replyToken'];
 
 			    $contentOnlinePlayer = file_get_contents('https://api.bf4stats.com/api/onlinePlayers');
-			    $amountplayer='จำนวนคนออนไล';
+			    $amountplayer="จำนวนคนออนไล";
 			    $onlineDecode=json_decode($contentOnlinePlayer,true);
 			    if (!is_null($onlineDecode)){
-			    if ($text=="pc"){
-			    	$amountplayer=$amountplayer+$onlineDecode['pc']['count'];
-			    }
+			    	switch ($text) {
+			    		case "pc":
+			    			$amountplayer=$amountplayer+$onlineDecode['pc']['count'];
+			    			break;
+			    		
+			    		default:
+			    			$amountplayer="WANT PC XBOX PS3 PS4"
+			    			break;
+			    	}
 			    $messages=[
 			    	'type'=>'text',
 			    	'text'=>$amountplayer
