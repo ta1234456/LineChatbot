@@ -15,12 +15,12 @@ if (!is_null($events['events'])) {
 			    $onlineDecode=json_decode($contentOnlinePlayer,true);
 			    if (!is_null($onlineDecode)){
 			    	switch ($text) {
-			    		case "pc":
+			    		case 'pc':
 			    			$amountplayer=$amountplayer+$onlineDecode['pc']['count'];
 			    			break;
 			    		
 			    		default:
-			    			$amountplayer="WANT PC XBOX PS3 PS4"
+			    			$amountplayer="WANT PC XBOX PS3 PS4";
 			    			break;
 			    	}
 			    $messages=[
