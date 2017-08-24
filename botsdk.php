@@ -16,11 +16,20 @@ if (!is_null($events['events'])) {
 			    if (!is_null($onlineDecode)){
 			    	switch ($text) {
 			    		case 'pc':
-			    			$amountplayer=$amountplayer+$onlineDecode['pc']['count'];
+			    			$amountplayer.=$onlineDecode['pc']['count'];
+			    			break;
+			    		case 'ps3':
+			    			$amountplayer.=$onlineDecode['ps3']['count'];
+			    			break;
+			    		case 'ps4':
+			    			$amountplayer.=$onlineDecode['ps4']['count'];
+			    			break;
+			    		case 'xbox':
+			    			$amountplayer.=$onlineDecode['xbox']['count'];
 			    			break;
 			    		
 			    		default:
-			    			$amountplayer="WANT PC XBOX PS3 PS4";
+			    			$amountplayer="อุ้ยตายแล้วโปรดพิม WANT PC XBOX PS3 PS4";
 			    			break;
 			    	}
 			    $messages=[
