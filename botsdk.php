@@ -8,7 +8,8 @@ if (!is_null($events['events'])) {
 			if ($event['type']=='message'&& $event['message']['type']=='text')
 			{
 			    $text = $event['message']['text'];
-			    $replyToken=$eventp['replyToken'];
+			    $replyToken=$event['replyToken'];
+
 			    $contentOnlinePlayer = file_get_contents('https://api.bf4stats.com/api/onlinePlayers');
 			    $amountplayer='จำนวนคนออนไล';
 			    $onlineDecode=json_decode($contentOnlinePlayer,true);
@@ -20,6 +21,7 @@ if (!is_null($events['events'])) {
 			    	'type'=>'text',
 			    	'text'=>$amountplayer
 			    	];
+
 			    $url = 'https://api.line.me/v2/bot/message/reply';
 			    $data = [
 				'replyToken' => $replyToken,
@@ -44,5 +46,5 @@ if (!is_null($events['events'])) {
 			# code...
 		}
 	}
-echo $events ;
+echo "OK" ;
 ?>
