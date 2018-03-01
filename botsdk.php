@@ -11,6 +11,7 @@ if (!is_null($events['events'])) {
 			    $replyToken=$event['replyToken'];
 
 			    $contentOnlinePlayer = file_get_contents('https://api.bf4stats.com/api/onlinePlayers');
+			    $map="ร้านอาหาร"
 			    $amountplayer="จำนวนคนออนไล";
 			    $onlineDecode=json_decode($contentOnlinePlayer,true);
 			    if (!is_null($onlineDecode)){
@@ -27,15 +28,22 @@ if (!is_null($events['events'])) {
 			    		case 'xbox':
 			    			$amountplayer.=$onlineDecode['xbox']['count'];
 			    			break;
-			    		
+					case 'map':
+			    			$map
 			    		default:
-			    			$amountplayer="อุ้ยตายแล้วโปรดพิม WANT PC XBOX PS3 PS4";
+			    			$amountplayer="อุ้ยตายแล้วโปรดพิม WANT pc xbox ps4 ps3 map";
 			    			break;
 			    	}
 			    $messages=[
 			    	'type'=>'text',
 			    	'text'=>$amountplayer
-			    	];
+			    	],
+				    ['type'=>'location'
+				     'location'=>$map
+				     "title": "my location",
+   				     "address": "〒150-0002 東京都渋谷区渋谷２丁目２１−１",
+    			             "latitude": 35.65910807942215,
+                                     "longitude": 139.70372892916203];
 
 			    $url = 'https://api.line.me/v2/bot/message/reply';
 			    $data = [
