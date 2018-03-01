@@ -29,7 +29,7 @@ if (!is_null($events['events'])) {
 			    			$amountplayer.=$onlineDecode['xbox']['count'];
 			    			break;
 					case 'map':
-			    			$map
+			    			$amountplayer
 			    		default:
 			    			$amountplayer="อุ้ยตายแล้วโปรดพิม WANT pc xbox ps4 ps3 map";
 			    			break;
