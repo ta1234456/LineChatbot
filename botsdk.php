@@ -38,8 +38,7 @@ if (!is_null($events['events'])) {
 			    	'type'=>'text',
 			    	'text'=>$amountplayer
 			    	],
-				    ['type'=>'location'
-				     'location'=>$map,
+				    ['type'=>'location',
 				     'title'=> 'my location',
    				     'address'=> '〒150-0002 東京都渋谷区渋谷２丁目２１−１',
     			             'atitude'=> 35.65910807942215,
