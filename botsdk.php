@@ -39,11 +39,11 @@ if (!is_null($events['events'])) {
 			    	'text'=>$amountplayer
 			    	],
 				    ['type'=>'location'
-				     'location'=>$map
-				     "title": "my location",
-   				     "address": "〒150-0002 東京都渋谷区渋谷２丁目２１−１",
-    			             "latitude": 35.65910807942215,
-                                     "longitude": 139.70372892916203];
+				     'location'=>$map,
+				     'title'=> 'my location',
+   				     'address'=> '〒150-0002 東京都渋谷区渋谷２丁目２１−１',
+    			             'atitude'=> 35.65910807942215,
+                                     'longitude'=>139.70372892916203];
 
 			    $url = 'https://api.line.me/v2/bot/message/reply';
 			    $data = [
